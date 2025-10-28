@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { BarChart3, Home, ShoppingBag } from "lucide-react";
+import { BarChart3, Home, ShoppingBag, Settings } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -31,6 +31,12 @@ const Navbar = () => {
               <Link to="/analysis" className="flex items-center space-x-2">
                 <BarChart3 className="h-4 w-4" />
                 <span>Analysis</span>
+              </Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link to="/admin" className="flex items-center space-x-2">
+                <Settings className="h-4 w-4" />
+                <span>Admin</span>
               </Link>
             </Button>
           </div>
