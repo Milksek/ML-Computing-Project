@@ -177,16 +177,34 @@ const AddAccount = () => {
                 />
 
                 {currentHero && (
-                  <FormField
-                    control={form.control}
-                    name="selectedSkins"
-                    render={() => (
-                      <FormItem>
-                        <FormLabel>Select Skins for {currentHero.name}</FormLabel>
-                        <FormDescription>
-                          Choose which skins this account has
-                        </FormDescription>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+                  <>
+                    <div className="bg-accent/50 border border-border rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="font-semibold text-foreground">Available Skins for {currentHero.name}</h3>
+                        <span className="text-sm text-muted-foreground">{currentHero.skins.length} skins</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {currentHero.skins.map((skin) => (
+                          <span 
+                            key={skin}
+                            className="px-3 py-1.5 bg-primary/10 border border-primary/20 text-primary rounded-md text-sm"
+                          >
+                            {skin}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="selectedSkins"
+                      render={() => (
+                        <FormItem>
+                          <FormLabel>Select Skins for This Account</FormLabel>
+                          <FormDescription>
+                            Check the skins that this account owns
+                          </FormDescription>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
                           {currentHero.skins.map((skin) => (
                             <FormField
                               key={skin}
@@ -225,6 +243,7 @@ const AddAccount = () => {
                       </FormItem>
                     )}
                   />
+                  </>
                 )}
 
                 <div className="flex gap-4 pt-4">
