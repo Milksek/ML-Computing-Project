@@ -8,6 +8,13 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: {
+      '/mlapi': {
+        target: 'https://mlbb-stats.ridwaanhall.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/mlapi/, ''),
+      },
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

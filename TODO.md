@@ -1,8 +1,9 @@
-# TODO: Integrate Hero Detail API Fetch
+# Hero List Display Update Tasks
 
-## Tasks
-
-- [x] Modify fetchHeroes in AddAccount.tsx to fetch detailed hero info from /api/hero-detail/{hero_id} after basic fetch
-- [x] Use Promise.all for parallel detail fetches to populate skins array
-- [x] Handle API errors gracefully, fallback to empty skins if detail fetch fails
-- [ ] Test the updated hero fetching with skins populated
+- [ ] Update Hero interface to include image field
+- [ ] Modify hero data fetching to construct image URLs
+- [ ] Replace checkbox list with styled hero card grid
+- [ ] Implement click-to-select functionality with visual feedback
+- [ ] Add HoverCard for tooltips showing roles and lanes
+- [ ] Ensure responsive design and proper styling
+- [ ] Test selection logic and form submission
